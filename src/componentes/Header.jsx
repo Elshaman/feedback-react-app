@@ -2,7 +2,7 @@ import propTypes  from "prop-types"
 
 function Header({text}) {
   return (
-    <header>
+    <header style={{ backgroundColor: 'blue' , color: 'red' }}>
         <div className="container">
             <h2>
                { text }
