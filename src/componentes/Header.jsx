@@ -1,13 +1,17 @@
-function Header(props) {
+function Header({text}) {
   return (
     <header>
         <div className="container">
             <h2>
-               { props.text }
+               { text }
             </h2>
         </div>
     </header>
   )
+}
+
+Header.defaultProps ={
+    text: 'FeedBack UI'
 }
 
 export default Header
