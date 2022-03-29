@@ -17,14 +17,14 @@ function App(){
         <div className="container">
             <h1>{ title }</h1>
             <p>{ body }</p>
-            {showComments ? (<div className="comments">
+            {showComments && (<div className="comments">
                 <h3>Comments ({comments.length})</h3>
                 <ul>
                     { comments.map( (comment, index) => (
                         <li key={index}>{ comment.text }</li>
                     )) }
                 </ul>
-            </div>) : 'no' }
+            </div>) }
             
         </div>
        
