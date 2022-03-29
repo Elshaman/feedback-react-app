@@ -8,6 +8,8 @@ function App(){
         {id: 3 , text: 'Third Comment'},
     ]
 
+    const loading = true   
+    if(loading) return <h1>Loading...</h1>
 
     return (
         <div className="container">
