@@ -4,13 +4,17 @@ import Card from "./shared/Card"
 
 function FeedbackItem({item}) {
     
+    const handleClick =(id)=>{
+        console.log(id)
+    }
+
     return (
     <Card reverse={false}>
         <div className="num-display">
             {item.rating}
         </div>
         <button className='close'>
-            <FaTimes color='purple' onClick={()=> console.log(item.id)} />
+            <FaTimes color='purple' onClick={ () => handleClick(item.id) } />
         </button>
         <div className="text-display">
             {item.text}
