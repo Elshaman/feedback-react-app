@@ -10,7 +10,7 @@ function FeedbackItem({item}) {
             {item.rating}
         </div>
         <button className='close'>
-            <FaTimes color='purple' />
+            <FaTimes color='purple' onClick={()=> console.log(item.id)} />
         </button>
         <div className="text-display">
             {item.text}
