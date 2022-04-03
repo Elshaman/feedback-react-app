@@ -6,7 +6,7 @@ function FeedbackForm() {
    const [text, setText] = useState('')
 
     const handleTextChange =(e)=>{
-        console.log(e.target.value)
+        setText(e.target.value)
     }
 
   return (
@@ -18,6 +18,7 @@ function FeedbackForm() {
                 <input onChange={handleTextChange}
                        type="text"
                        placeholder="write a review"
+                       value={text}
                        id="" />
                 <button type="submit">
                     Send
