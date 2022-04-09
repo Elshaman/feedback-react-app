@@ -11,6 +11,10 @@ function App(){
 
     const [feedback , setFeedback] = useState(FeedbackData)
 
+    const addFeedback = ( newFeedback) =>{
+        console.log(newFeedback)
+    }
+
     const deleteFeedback = (id) => {
         //console.log('App' ,id)
         if(window.confirm('are you sure?')){
@@ -24,7 +28,7 @@ function App(){
         <>
             <Header  />
                 <div className="container">
-                    <FeedbackForm />
+                    <FeedbackForm handleAdd={addFeedback} />
                     <FeedbackStats feedback={feedback} />
                     <FeedbackList
                          feedback={feedback}
