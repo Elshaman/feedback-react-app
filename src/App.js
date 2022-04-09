@@ -1,3 +1,4 @@
+import {v4 as uuidv4} from 'uuid'
 import { useState } from "react"
 import Header from "./componentes/Header"
 //import FeedbackItem from "./componentes/FeedbackItem"
@@ -12,6 +13,7 @@ function App(){
     const [feedback , setFeedback] = useState(FeedbackData)
 
     const addFeedback = ( newFeedback) =>{
+        newFeedback.id = uuidv4()
         console.log(newFeedback)
     }
 
