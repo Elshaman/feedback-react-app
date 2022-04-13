@@ -8,9 +8,19 @@ export const FeedbackProvider = ({children}) =>{
     const [feedback , setFeedback] = useState([
         {
             id:1,
-            text: 'this item is from context',
+            text: 'this item is 1 from context',
             rating: 10
-        }
+        },
+        {
+            id:2,
+            text: 'this item is 2 from context',
+            rating: 5
+        },
+        {
+            id:3,
+            text: 'this item is 3 from context',
+            rating: 8
+        },
     ])    
 
     const addFeedback = ( newFeedback) =>{
