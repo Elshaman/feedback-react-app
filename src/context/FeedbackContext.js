@@ -60,7 +60,8 @@ export const FeedbackProvider = ({children}) =>{
                             feedback,
                             deleteFeedback,
                             addFeedback,
-                            editFeedback
+                            editFeedback,
+                            feedbackEdit
                        }}>
                         {children}
             </FeedbackContext.Provider>

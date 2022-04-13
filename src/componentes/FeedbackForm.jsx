@@ -14,7 +14,7 @@ function FeedbackForm() {
 
    useEffect(() => {
        console.log("Hello")
-   }) 
+   }, [feedbackEdit]) 
 
 
     const handleTextChange =(e)=>{
