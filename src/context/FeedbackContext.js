@@ -12,10 +12,22 @@ export const FeedbackProvider = ({children}) =>{
         }
     ])    
 
+    const deleteFeedback = (id) => {
+        //console.log('App' ,id)
+        if(window.confirm('are you sure?')){
+             setFeedback( feedback.filter((item) => item.id !== id) )
+        }
+       
+    } 
 
-    return <FeedbackContext.Provider value={{ feedback }}>
-        {children}
-    </FeedbackContext.Provider>
+
+    return <FeedbackContext.Provider 
+                value={{ 
+                            feedback,
+                            deleteFeedback
+                       }}>
+                        {children}
+            </FeedbackContext.Provider>
 }
 
 export default FeedbackContext

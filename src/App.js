@@ -26,13 +26,7 @@ function App(){
         setFeedback([newFeedback /*2 */ , /* 1 */ ...feedback])
     }
 
-    const deleteFeedback = (id) => {
-        //console.log('App' ,id)
-        if(window.confirm('are you sure?')){
-             setFeedback( feedback.filter((item) => item.id !== id) )
-        }
-       
-    } 
+   
 
 
     return (
@@ -44,11 +38,8 @@ function App(){
                             <Route exact path="/" element={
                                 <>
                                     <FeedbackForm handleAdd={addFeedback} />
-                                    <FeedbackStats feedback={feedback} />
-                                    <FeedbackList
-                                        feedback={feedback}
-                                        handleDelete={deleteFeedback}
-                                    /> 
+                                    <FeedbackStats  />
+                                    <FeedbackList /> 
                                     <AboutIconLink />    
                                 </>    
                             }>
