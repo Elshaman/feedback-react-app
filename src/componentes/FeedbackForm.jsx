@@ -9,7 +9,7 @@ function FeedbackForm() {
    const [text, setText] = useState('')
    const [rating, setRating] = useState(10)
    const [btnDisabled, setBtnDisabled] = useState(true)
-   const [message, setMessage] = useState('Hello') 
+   const [message, setMessage] = useState('') 
    const {addFeedback, feedbackEdit, updateFeedback  } = useContext(FeedbackContext)
 
    useEffect(() => {
@@ -26,7 +26,7 @@ function FeedbackForm() {
             setBtnDisabled(true)
             setMessage(null)
         }else if(text!== '' && text.trim().length <= 10 ){
-            setMessage('Text must be at least 10 characters')
+            setMessage('tu comentario debe tener al menos 10 caractéres')
             setBtnDisabled(true)
         }else{
             setMessage(null)
@@ -60,16 +60,16 @@ function FeedbackForm() {
   return (
     <Card>
         <form onSubmit={handleSubmit}>
-            <h2>How would you rate your service with us?</h2>
+            <h2>Como calificarías nuestro servicio?</h2>
             <RatingSelect select={(rating) => setRating(rating)}/>
             <div className="input-group">
                 <input onChange={handleTextChange}
                        type="text"
-                       placeholder="write a review"
+                       placeholder="escribe tu comentario"
                        value={text}
                        id="" />
                 <Button type="submit" isDisabled={btnDisabled} version="secondary">
-                    Send
+                    Enviar
                 </Button>
             </div>
             {message && <div className="message">{message}</div>}
