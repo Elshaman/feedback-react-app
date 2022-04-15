@@ -1,32 +1,31 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import {v4 as uuidv4} from 'uuid'
 
 const FeedbackContext = createContext()
 
 export const FeedbackProvider = ({children}) =>{
 
-    const [feedback , setFeedback] = useState([
-        {
-            id:1,
-            text: 'Comentario de prueba 1 de contexto',
-            rating: 10
-        },
-        {
-            id:2,
-            text: 'Comentario de prueba 2 de contexto',
-            rating: 5
-        },
-        {
-            id:3,
-            text: 'Comentario de prueba 3 de contexto',
-            rating: 8
-        },
-    ])    
+    const [feedback , setFeedback] = useState([])    
 
     const [feedbackEdit , setFeedbackEdit ] = useState({
         item: {}, 
         edit: false
     })
+
+     useEffect(() => {
+         //console.log("789")
+         fetchFeedback()
+     }, []);
+
+       //function for fetch data fro mmock server
+    const fetchFeedback = async () =>{
+        const response = await fetch(`http://localhost:5000/feedback?_sort=id&_order=desc`)
+        const data = await response.json()
+       // console.log(data)
+        setFeedback(data)
+    }
+
+
 
     const addFeedback = ( newFeedback) =>{
         newFeedback.id = uuidv4()
