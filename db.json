@@ -1,14 +1,19 @@
 {
   "feedback": [
     {
-      "id": 1,
-      "rating": 10,
-      "text": "Este feedback item 1 viene del backend"
+      "text": "Este feedback item 1 viene del backend pero modificado",
+      "rating": 3,
+      "id": 1
     },
     {
       "id": 2,
       "rating": 8,
       "text": "Este feedback item 2 viene del backend"
+    },
+    {
+      "text": "nuevo comentario del shaman",
+      "rating": 3,
+      "id": 3
     }
   ]
 }
